@@ -1,5 +1,7 @@
 #ifndef LIB_H
 #define LIB_H
+#include<time.h>
+
 
 // Estrutura do nó contendo Nome e RG (RG com 9 algarismos, armazenado como int)
 typedef struct Node {

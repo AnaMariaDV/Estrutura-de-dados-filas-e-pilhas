@@ -3,7 +3,7 @@
 #include "lib.h"
 
 int main() {
-    No* head = NULL; // Inicializa a lista como vazia
+    Node* head = NULL; // Inicializa a lista como vazia
 
     // Abre o arquivo "dados.txt" para leitura dos registros
     FILE *file = fopen("dados.txt", "r");// o r é de leitura
