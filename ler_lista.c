@@ -1,18 +1,19 @@
 #include<lib.h>
 void lerLista(Node **cabeca, const char *nomeArquivo) {
-    FILE *arquivo = fopen(nomeArquivo, "r");
-    if (arquivo == NULL) {
-       printf("Erro ao abrir arquivo para leitura.\n");
-       return;
+    Node *arq = fopen(nomeArquivo, "r");
+    if(arq == NULL) {
+        printf("\nErro ao abrir arquivo para leitura.\n");
+        return;
     }
-    char linha[100];
-    while (fgets(linha, sizeof(linha), arquivo) != NULL) {
-       char nome[50];
-       int rg;
-       if (sscanf(linha, "%[^,],%d", nome, &rg) == 2) {
-           inserirNoFim(cabeca, nome, rg);
-       }
+    char linha[100], nome[50];
+    int rg;
+    while(fgets(linha, sizeof(linha), arq)) {
+        if(sscanf(linha, "%[^,],%d", nome, &rg) == 2) {
+            Node *novo = criarNo(nome, rg);
+            novo->next = *cabeca;
+            *cabeca = novo;
+        }
     }
-    fclose(arquivo);
-    printf("Lista carregada do arquivo %s.\n", nomeArquivo);
+    fclose(arq);
+    printf("\nLista lida do arquivo %s.\n", nomeArquivo);
 }

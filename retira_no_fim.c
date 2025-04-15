@@ -1,28 +1,37 @@
 //Retirar um nó no fim da lista e apresentar Nome, RG, C(n), M(n), Tempo de execução e sua posição N na lista.
 #include<lib.h>
-void removerNoFim(Node **cabeca) 
-{
-    if (*cabeca == NULL) 
-    {
-       printf("Lista vazia. Nada para remover no fim.\n");
+void removerNoFim(Node **cabeca) {
+   int comp = 0, mov = 0, pos = 1;
+   clock_t inicio = clock();
+   
+   if(*cabeca == NULL) {
+       comp++;
+       printf("\nLista vazia. Nao ha no para retirar no fim.\n");
        return;
-    }
-    Node *atual = *cabeca;
-    Node *anterior = NULL;
-    int pos = 1;
-
-    while (atual->next != NULL) 
-    {
-       anterior = atual;
-       atual = atual->next;
+   }
+   Node *atual = *cabeca, *anterior = NULL;
+   comp++;
+   if(atual->next == NULL) {
+       *cabeca = NULL; mov++;
+       clock_t fim = clock();
+       double tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
+       printf("\nRemocao no fim:\n");
+       printf("Nome: %s, RG: %d\nC(n): %d, M(n): %d\nTempo: %.6f s\nPosicao: %d\n",
+              atual->nome, atual->rg, comp, mov, tempo, pos);
+       free(atual);
+       return;
+   }
+   while(atual->next != NULL) {
+       comp++;
+       anterior = atual; mov++;
+       atual = atual->next; mov++;
        pos++;
-    }
-
-    if (anterior != NULL)
-       anterior->next = NULL;
-    else
-       *cabeca = NULL;
-       
-    printf("Removido do fim: %s, %d, posicao: %d\n", atual->nome, atual->rg, pos);
-    free(atual);
+   }
+   anterior->next = NULL; mov++;
+   clock_t fim = clock();
+   double tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
+   printf("\nRemocao no fim:\n");
+   printf("Nome: %s, RG: %d\nC(n): %d, M(n): %d\nTempo: %.6f s\nPosicao: %d\n",
+          atual->nome, atual->rg, comp, mov, tempo, pos);
+   free(atual);
 }

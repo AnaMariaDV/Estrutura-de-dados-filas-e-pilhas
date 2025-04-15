@@ -1,19 +1,32 @@
 //Inserção de um nó na posição N e apresentar Nome, RG, C(n), M(n), Tempo de execução e sua posição N na lista.
 #include<lib.h>
 
-void inserirNoPosicao(Node **cabeca, char *nome, int rg, int posDesejada) {
-    if (posDesejada <= 1 || *cabeca == NULL) {
+void inserirNaPosicao(Node **cabeca, char *nome, int rg, int posDesejada) {
+    int comp = 0, mov = 0, pos = 1;
+    clock_t inicio = clock();
+    
+    if(posDesejada <= 1 || *cabeca == NULL) {
         inserirNoInicio(cabeca, nome, rg);
         return;
     }
-    Node *novoNo = criarNo(nome, rg);
+    Node *novo = criarNo(nome, rg); mov++;
     Node *atual = *cabeca;
-    int pos = 1;
-    while (atual->next != NULL && pos < posDesejada - 1) {
-        atual = atual->next;
+    comp++; // checagem inicial
+    while(atual != NULL && pos < posDesejada - 1) {
+        comp++;
+        atual = atual->next; mov++;
         pos++;
     }
-    novoNo->next = atual->next;
-    atual->next = novoNo;
-    printf("Inserido na posicao %d: %s, %d\n", posDesejada, novoNo->nome, novoNo->rg);
+    if(atual == NULL) {
+        // Se a lista tiver menos nós do que a posição desejada, insere no fim
+        inserirNoFim(cabeca, nome, rg);
+        return;
+    }
+    novo->next = atual->next; mov++;
+    atual->next = novo; mov++;
+    clock_t fim = clock();
+    double tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
+    printf("\nInsercao na posicao %d:\n", posDesejada);
+    printf("Nome: %s, RG: %d\nC(n): %d, M(n): %d\nTempo: %.6f s\nPosicao: %d\n",
+           novo->nome, novo->rg, comp, mov, tempo, posDesejada);
 }

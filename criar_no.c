@@ -1,13 +1,13 @@
 #include<lib.h>
 
 Node* criarNo(char *nome, int rg) {
-    Node* novoNo = (Node*) malloc(sizeof(Node));
-    if (novoNo == NULL) {
-        printf("Erro na alocacao de memoria.\n");
+    Node* novo = (Node*) malloc(sizeof(Node));
+    if (!novo) {
+        printf("Erro de alocacao!\n");
         exit(1);
     }
-    copiarString(novoNo->nome, nome);
-    novoNo->rg = rg;
-    novoNo->next = NULL;
-    return novoNo;
+    copiarString(novo->nome, nome);
+    novo->rg = rg;
+    novo->next = NULL;
+    return novo;
 }
