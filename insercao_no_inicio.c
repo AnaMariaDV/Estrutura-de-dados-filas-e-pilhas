@@ -1,4 +1,4 @@
-#include<lib.h>
+#include"lib.h"
 
 
 void inserirNoInicio(Node **cabeca, char *nome, int rg) {

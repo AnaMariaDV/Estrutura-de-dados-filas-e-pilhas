@@ -1,4 +1,4 @@
-#include<lib.h>
+#include"lib.h"
 
 
 void procurarPorRG(Node *cabeca, int rg) {

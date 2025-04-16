@@ -1,4 +1,4 @@
-#include<lib.h>
+#include"lib.h"
 void lerLista(Node **cabeca, const char *nomeArquivo) {
     Node *arq = fopen(nomeArquivo, "r");
     if(arq == NULL) {

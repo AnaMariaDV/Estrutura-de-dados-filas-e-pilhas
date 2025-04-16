@@ -1,4 +1,4 @@
-#include<lib.h>
+#include"lib.h"
 
 Node* criarNo(char *nome, int rg) {
     Node* novo = (Node*) malloc(sizeof(Node));

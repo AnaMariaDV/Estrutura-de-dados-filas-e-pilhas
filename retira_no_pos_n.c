@@ -1,4 +1,4 @@
-#include<lib.h>
+#include"lib.h"
 void removerNaPosicao(Node **cabeca, int posDesejada) {
    int comp = 0, mov = 0, pos = 1;
    clock_t inicio = clock();

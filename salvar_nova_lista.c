@@ -1,6 +1,6 @@
 //Salvar a lista em um arquivo.
 //no formato nome,RG
-#include<lib.h>
+#include"lib.h"
 void salvarLista(Node *cabeca, const char *nomeArquivo) {
    FILE *arq = fopen(nomeArquivo, "w");
    if(arq == NULL) {

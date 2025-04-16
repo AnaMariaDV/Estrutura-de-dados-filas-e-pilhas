@@ -1,4 +1,4 @@
-#include<lib.h>
+#include"lib.h"
 void menu(Node **cabeca) {
     int opcao;
     do {
