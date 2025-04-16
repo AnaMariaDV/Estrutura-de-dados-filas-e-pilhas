@@ -1,7 +1,7 @@
 //Inserção de um nó na posição N e apresentar Nome, RG, C(n), M(n), Tempo de execução e sua posição N na lista.
 #include"lib.h"
 
-void inserirNaPosicao(Node **cabeca, char *nome, int rg, int posDesejada) {
+void inserirNoPosicao(Node **cabeca, char *nome, int rg, int posDesejada) {
     int comp = 0, mov = 0, pos = 1;
     clock_t inicio = clock();
     

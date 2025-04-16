@@ -1,6 +1,6 @@
 #include"lib.h"
 void lerLista(Node **cabeca, const char *nomeArquivo) {
-    Node *arq = fopen(nomeArquivo, "r");
+    FILE *arq = fopen(nomeArquivo, "r");
     if(arq == NULL) {
         printf("\nErro ao abrir arquivo para leitura.\n");
         return;

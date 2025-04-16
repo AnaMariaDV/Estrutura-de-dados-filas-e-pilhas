@@ -20,7 +20,7 @@ void inserirNoPosicao(Node **cabeca, char *nome, int rg, int posDesejada);
 void removerNoInicio(Node **cabeca);
 void removerNoFim(Node **cabeca);
 void removerNoPosicao(Node **cabeca, int posDesejada);
-Node* buscarNo(Node *cabeca, int rg);
+void procurarPorRG(Node *cabeca, int rg);
 void imprimirLista(Node *cabeca);
 
 
@@ -31,5 +31,5 @@ void lerLista(Node **cabeca, const char *nomeArquivo);
 // Função de menu para interação com o usuário
 void menu(Node **cabeca);
 void copiarString(char *destino, const char *origem);
-void sair_do_sistema();
+void sairDoSistema();
 #endif

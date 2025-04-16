@@ -47,7 +47,7 @@ void menu(Node **cabeca) {
                 scanf("%d", &rg);
                 printf("Entre com a posicao desejada: ");
                 scanf("%d", &posDesejada);
-                inserirNaPosicao(cabeca, nome, rg, posDesejada);
+                inserirNoPosicao(cabeca, nome, rg, posDesejada);
                 break;
             }
             case 4: {
@@ -62,7 +62,7 @@ void menu(Node **cabeca) {
                 int posDesejada;
                 printf("Entre com a posicao para remocao: ");
                 scanf("%d", &posDesejada);
-                removerNaPosicao(cabeca, posDesejada);
+                removerNoPosicao(cabeca, posDesejada);
                 break;
             }
             case 7: {

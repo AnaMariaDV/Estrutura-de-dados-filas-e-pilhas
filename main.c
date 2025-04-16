@@ -4,7 +4,7 @@
 
 int main() {
     Node *cabeca = NULL;
-    menu_oper(&cabeca);
+    menu(&cabeca);
     
     // Libera a memória da lista, se necessário.
     Node *atual;
