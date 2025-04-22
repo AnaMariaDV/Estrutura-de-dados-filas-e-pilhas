@@ -1,5 +1,6 @@
 #include"lib.h"
 void lerLista(Node **cabeca, const char *nomeArquivo) {
+    clock_t inicio = clock();
     FILE *arq = fopen(nomeArquivo, "r");
     if(arq == NULL) {
         printf("\nErro ao abrir arquivo para leitura.\n");
@@ -15,5 +16,7 @@ void lerLista(Node **cabeca, const char *nomeArquivo) {
         }
     }
     fclose(arq);
-    printf("\nLista lida do arquivo %s.\n", nomeArquivo);
+    clock_t fim = clock();
+    double tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
+    printf("\nLista lida do arquivo %s.\n\nTempo: %.6f s", nomeArquivo, tempo);
 }
