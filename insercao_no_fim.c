@@ -15,9 +15,9 @@ void inserirNoFim(Node **cabeca, char *nome, int rg) {
         mov++; // atualização da cabeça
         clock_t fim = clock();
         double tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
-        printf("\nInsercao no fim:\n");
-        printf("Nome: %s, RG: %d\nC(n): %d, M(n): %d\nTempo: %.6f s\nPosicao: %d\n",
-               novo->nome, novo->rg, comp, mov, tempo, 1);
+        //printf("\nInsercao no fim:\n");
+        //printf("Nome: %s, RG: %d\nC(n): %d, M(n): %d\nTempo: %.6f s\nPosicao: %d\n",
+          //    novo->nome, novo->rg, comp, mov, tempo, 1);
         return;
     }
     Node *atual = *cabeca;
@@ -32,7 +32,7 @@ void inserirNoFim(Node **cabeca, char *nome, int rg) {
     pos++;
     clock_t fim = clock();
     double tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
-    printf("\nInsercao no fim:\n");
-    printf("Nome: %s, RG: %d\nC(n): %d, M(n): %d\nTempo: %.6f s\nPosicao: %d\n",
-           novo->nome, novo->rg, comp, mov, tempo, pos);
+   // printf("\nInsercao no fim:\n");
+   // printf("Nome: %s, RG: %d\nC(n): %d, M(n): %d\nTempo: %.6f s\nPosicao: %d\n",
+        //  novo->nome, novo->rg, comp, mov, tempo, pos);
 }
